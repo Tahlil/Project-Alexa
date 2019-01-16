@@ -39,6 +39,7 @@ exports.postAddTask = (req, res, next) => {
 exports.updateProgress = (req, res, next) => {
   console.log("Start updating");
   console.log(req.body);
+  global.answer= true;
   Task.updateProgress(req.body.progress);
   // res.redirect('/');
 };

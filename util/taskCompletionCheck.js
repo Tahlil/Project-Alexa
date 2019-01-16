@@ -20,7 +20,7 @@ var alexaAPI = function () {
   }
   
   const run = function () {
-    
+    console.log("From Run global.answer: " + global.answer);
     //console.log("This function get called");
     console.log("remaining Time " + millisTillSpecifiedTime / 1000 + " seconds");
     setTimeout(function () {  
@@ -32,8 +32,9 @@ var alexaAPI = function () {
           numberOfTimeAsked = 0;
           clearInterval(interval);
           millisTillSpecifiedTime = 86400000 - maxAsking * askingIntervalSeconds * 1000;
+          global.answer = false;
           alexaAPI.run();
-        } else {
+        } else if(!global.answer){
           _checkProgress();
         }
       }, askingIntervalSeconds * 1000);

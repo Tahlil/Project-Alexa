@@ -6,6 +6,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const opn = require('opn');
 
+global.answer = false;
 var privateKey = fs.readFileSync('privatekey.pem').toString();
 var certificate = fs.readFileSync('certificate.pem').toString();
 
@@ -15,8 +16,6 @@ const alexaAPI = require('./util/taskCompletionCheck');
 
 
 const app = express();
-
-
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -41,4 +40,5 @@ https.createServer(httpOptions, app).listen(portNumber, () => {
 console.log(">> Serving on " + portNumber);
 });
 opn("https://localhost:8000/tasks?alexa=true");
+
 alexaAPI.run();
