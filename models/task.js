@@ -37,4 +37,21 @@ module.exports = class Task {
   static fetchAll(cb) {
     getTasksFromFile(cb);
   }
+
+  static updateProgress(newProgress) {
+    getTasksFromFile(tasks => {
+      for (let index = 0; index < tasks.length; index++) {
+        if (tasks[index].title === "Pulse") {
+          let tempCopy = tasks[index];
+          tempCopy.progress = newProgress;
+          tasks[index] = {};
+          tasks[index] = tempCopy;
+          console.log(tasks);
+        }
+      }
+      fs.writeFile(p, JSON.stringify(tasks), err => {
+        console.log(err);
+      });
+    });
+  }
 };

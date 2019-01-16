@@ -66,3 +66,47 @@ label.switch-label {
     padding: 0 0 0 21px;
     color: gainsboro;
 }
+
+@-webkit-keyframes animate-width {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
+@-moz-keyframes animate-width {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
+@keyframes animate-width {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        visibility: visible;
+    }
+}
+
+.progressbar {
+    -webkit-animation: animate-width;
+    -moz-animation: animate-width;
+    animation: animate-width;
+    animation-timing-function: cubic-bezier(0.35, 0.95, 0.67, 0.99);
+    -webkit-animation-timing-function: cubic-bezier(0.35, 0.95, 0.67, 0.99);
+    -moz-animation-timing-function: cubic-bezier(0.35, 0.95, 0.67, 0.99);
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}

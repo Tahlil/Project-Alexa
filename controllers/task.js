@@ -17,7 +17,7 @@ exports.getIndex = (req, res, next) => {
     });
 };
 
-exports.getAddProduct = (req, res, next) => {
+exports.getAddTask = (req, res, next) => {
   res.render('task/add-task', {
     pageTitle: 'Add Task',
     path: '/add-task'
@@ -34,4 +34,11 @@ exports.postAddTask = (req, res, next) => {
   const task = new Task(title, description, staringTime, progress);
   task.save();
   res.redirect('/tasks');
+};
+
+exports.updateProgress = (req, res, next) => {
+  console.log("Start updating");
+  console.log(req.body);
+  Task.updateProgress(req.body.progress);
+  // res.redirect('/');
 };
