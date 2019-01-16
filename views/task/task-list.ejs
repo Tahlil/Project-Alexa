@@ -1,0 +1,70 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/task.css">
+</head>
+
+<body>
+  <%- include('../includes/navigation.ejs') %>
+  <div class="container">
+    
+      <div class="modal" tabindex="-1" role="dialog" id="task-modal">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <p>Modal body text goes here.</p>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+    <% if (tasks.length > 0) { %>
+    <h2 class="top-heading" id="task-heading">List of tasks</h2>
+    <table class="table" id="task-table">
+      <thead>
+        <tr class="task-table-row">
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Start</th>
+          <th scope="col">Progress</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let task of tasks) { %>
+        <tr class="task-table-row">
+          <td>
+              <%= task.title %>
+          </td>
+          <td>
+              <%= task.description %>
+          </td>
+          <td>
+            <%= task.startingTime %>
+          </td>
+          <td>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: <%= task.progress %>%" value="100" aria-valuemin="0"
+                aria-valuemax="100">
+                
+                </div>
+                <%= task.progress %>
+                %
+            </div>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <% } else { %>
+      <h1>Wo hoo! No Tasks at hand!</h1>
+      <% } %>
+    <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" id="show-modal" data-toggle="modal"
+      data-target="#task-modal"></a>
+
+  </div>

@@ -1,0 +1,68 @@
+.top-heading {
+    margin: 20px 0 20px 0;
+}
+
+.task-table-row th,
+td {
+    width: 25%;
+}
+
+#show-modal {
+    margin: 25px;
+    float: right;
+}
+
+input.switch {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    width: 54px;
+    height: 27.25px;
+    border-radius: 47.25px;
+    box-shadow: inset -33.6px 0px 0px 0px gainsboro;
+    border: 3.675px solid gainsboro;
+    outline: none;
+    transition: 0.05s;
+    cursor: pointer;
+    background-color: white;
+}
+
+input.switch:after {
+    content: "\2715";
+    font-size: 22.625px;
+    display: inline-flex;
+    justify-content: center;
+    width: 32px;
+    line-height: 17.25px;
+    position: relative;
+    z-index: 99;
+    left: 0;
+    /* top: -3.675px; */
+    color: oldlace;
+    transition: 0.05s;
+}
+
+input.switch:checked {
+    box-shadow: inset 33.6px 0px 0px 0px #2196f3;
+    border: 3.675px solid #2196f3;
+}
+
+input.switch:checked+label.switch-label {
+    color: #2196f3;
+}
+
+input.switch:checked:after {
+    content: "\2713";
+    left: 38.325px;
+    color: #2196f3;
+}
+
+label.switch-label {
+    font-size: 15.25px;
+    height: 14.25px;
+    display: flex;
+    line-height: 14.25px;
+    padding: 0 0 0 21px;
+    color: gainsboro;
+}
