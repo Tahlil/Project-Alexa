@@ -1,7 +1,10 @@
+const play = require('audio-play');
+const load = require('audio-loader');
+var googleTTS = require('google-tts-api');
 const opn = require('opn');
 var alexaAPI = function () {
   var now = new Date(),
-    specificTime = 14,
+    specificTime = 17,
     askingIntervalSeconds = 5,
     maxAsking = 1,
     numberOfTimeAsked = 0,
@@ -13,17 +16,9 @@ var alexaAPI = function () {
     let today = new Date();
     console.log("It's " + today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + ", " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds());
   }
-  var googleTTS = require('google-tts-api');
+  
   const run = function () {
-    opn("http://localhost:3000/");
-    googleTTS('Hello World', 'en', 1) // speed normal = 1 (default), slow = 0.24
-      .then(function (url) {
-        opn(url);
-        console.log(url); // https://translate.google.com/translate_tts?...
-      })
-      .catch(function (err) {
-        console.error(err.stack);
-      });
+    // opn("https://localhost:8000/tasks");
     // console.log("This function get called");
     console.log("remaining Time " + millisTillSpecifiedTime / 1000 + " seconds");
     setTimeout(function () {

@@ -19,12 +19,16 @@
   "homepage": "https://github.com/Tahlil/Project-Alexa#readme",
   "dependencies": {
     "audio-loader": "^1.0.3",
+    "audio-play": "^2.2.1",
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
     "google-tts-api": "0.0.4",
-    "opn": "^5.4.0"
+    "https": "^1.0.0",
+    "opn": "^5.4.0",
+    "say": "^0.15.0",
+    "text-to-speech-js": "^1.1.9"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
